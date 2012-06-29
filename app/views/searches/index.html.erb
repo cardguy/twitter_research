@@ -1,5 +1,18 @@
-<form action="/searches/1" method="get">
+
+<div class="form">
+  <form action="/searches/1" method="get">
+
 <label>Search Twitter</label>
-<input type="text" name="q"/>
-<input type="submit" name="submit" value="Search"/>
+<input type="text" name="q" id="q" value="Search Twitter"/>
+<input type="submit" name="submit" value="submit"/><br/>
+
+  <br/>
+
+  <label>Results Per Page?</label><br/>
+  <input type="radio" name="@results_per_page" value="5" /> 5<br />
+  <input type="radio" name="rpp" value="10" />10<br />
+  <input type="radio" name="rpp" value=20.to_i />20<br />
+
+
 </form>
+</div>

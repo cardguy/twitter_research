@@ -1,3 +1,74 @@
 // Place all the styles related to the searches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "UTF-8";
+body {
+  background-image: url('../images/TwitterTweet.gif');
+  background-repeat:  no-repeat;
+  background-position:center top;
+  background-attachment:fixed;
+	padding: 0;
+	text-size: 62.5%em;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+
+        font: 11px/18px Verdana, Arial, Trebuchet MS, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #4D4D4D;
+	margin: 0;
+	padding-bottom: 1.4em;
+}
+
+.form {
+
+
+        width: 70%;
+        margin-left:auto;
+        margin-right:auto;
+	padding-top: 225px;
+
+}
+
+h1 {
+	font: 30px/36px Times,serif;
+	font-weight: bold;
+	color: #FF0000;
+	margin-top: 2em;
+	padding-bottom: .1em;
+}
+
+/* CSS Style Begins here */
+
+
+p
+{
+	font: 11px/18px Verdana, Arial, Trebuchet MS, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #4D4D4D;
+	margin: 0;
+	padding-bottom: 1.4em;
+}
+
+#base {
+        text-align: left;
+#	border: 0px solid #000;
+	margin: 2em;
+	width: 60%;
+	padding: 5px;
+        margin: 0px auto;
+}
+
+ul {list-style-type: circle;
+      text-align: left;
+     }
+
+li {
+  	font: 14px/18px Verdana, Arial, Trebuchet MS, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #4D4D4D;
+	margin-bottom: 1.2em;
+#	padding-bottom: 3em;
+
+}

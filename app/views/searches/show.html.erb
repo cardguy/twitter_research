@@ -1,12 +1,18 @@
-<h1> You searched for <%= params[:q] %></h1>
+
+<body>
+
+  <h1> You searched for <%= params[:q] %></h1>
 
 <pre>
 <% @results.inspect %>
 </pre>
 
-<ul>
+<div id=base>
+  <ul>
 <% @results['results'].each do |r| %>
  <li><%= r['text'] %></li>
   <% end %>
 
- </ul>
+  </ul>
+  </div>
+</body>
