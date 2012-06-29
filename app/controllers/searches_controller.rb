@@ -5,7 +5,7 @@ class SearchesController < ApplicationController
 
   def show
     search = SimpleTwitter::Search.new
-   @results =  search.search(params[:q])
+   @results = search.search(params[:q])
   end
 
 end
