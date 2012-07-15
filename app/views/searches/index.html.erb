@@ -6,12 +6,22 @@
 <input type="text" name="q" id="q" value="Search Twitter"/>
 <input type="submit" name="submit" value="submit"/><br/>
 
-  <br/>
+<br/>
+
+<SELECT name="lang">
+        <OPTION value="en">English</OPTION>
+        <OPTION value="fr">French</OPTION>
+        <OPTION value="es">Spanish</OPTION>
+        <OPTION value="ru">Russian</OPTION>
+</SELECT>
+
+<br/>
 
   <label>Results Per Page?</label><br/>
-  <input type="radio" name="rpp" value="5" /> 5<br />
-  <input type="radio" name="rpp" value="10" />10<br />
-  <input type="radio" name="rpp" value=20.to_i />20<br />
+  <input type="radio" id="rpp" value=5 /> 5<br />
+  <input type="radio" id="rpp" value=10 />10<br />
+  <input type="radio" id="rpp" value=20 />20<br />
+
 
 
 </form>
