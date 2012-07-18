@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create! do |user|
+  user.full_name             = 'Roert Test'
+  user.email                 = "macSeed@test.com"
+  user.password              = 'foobar'
+  user.password_confirmation = 'foobar'
+end
+
+Category.create!(title: 'Gaga')
+Category.create!(title: 'R&B')
+Category.create!(title: 'Tech')
+Category.create!(title: 'Politics')
+Category.create!(title: 'Weather')
