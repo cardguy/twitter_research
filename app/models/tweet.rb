@@ -13,8 +13,7 @@ class Tweet < ActiveRecord::Base
     tweet = tweeted_text.gsub(/#/, '').downcase.split
     titles = Category.all.map(&:title).map(&:downcase)
 
-    match = tweet & titles
-    match.map(&:capitalize).sort.join(', ')
+    (tweet & titles).map(&:capitalize).sort.join(', ')
 
 
     # words = tweeted_text.gsub(/#/, '').split(/\s+/)
