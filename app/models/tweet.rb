@@ -10,8 +10,9 @@ class Tweet < ActiveRecord::Base
   has_and_belongs_to_many(:categories)
 
   def suggested_categories
-    tweet = tweeted_text.gsub(/#/, '').downcase.split
     titles = Category.all.map(&:title).map(&:downcase)
+    tweet = tweeted_text.gsub(/[^\w\s]/, ' ').downcase.split.sort
+
 
     (tweet & titles).map(&:capitalize).sort.join(', ')
 

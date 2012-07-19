@@ -15,10 +15,13 @@ class TweetTest < ActiveSupport::TestCase
 
   test("suggested categories works correctly") do
     tweet = Tweet.new do |t|
-      t.tweeted_text ="I wish I could get money for my business to get off the ground #money"
+      t.tweeted_text ="I wish I could get! for my10 #business to get off the ground #money"
     end
 
-    assert_equal("Business, Money", tweet.suggested_categories)
-    end
+   assert_equal("Business, Money", tweet.suggested_categories)
+   # assert_equal("Business", tweet.suggested_categories)
+   # assert_equal("Money", tweet.suggested_categories)
+  #  assert_equal("Ground", tweet.suggested_categories)
+  end
 
 end
