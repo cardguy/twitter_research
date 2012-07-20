@@ -15,19 +15,24 @@ class Tweet < ActiveRecord::Base
 
 
     (tweet & titles).map(&:capitalize).sort.join(', ')
+  end
 
+  ##############################################################
+  # Returns comma separated string of the current category titles.
+  def categories_as_string
+    categories.map(&:title).sort.join(', ')
 
-    # words = tweeted_text.gsub(/#/, '').split(/\s+/)
-    # categories = Category.limit(30).all
+  end
+  ###########################################################################
+  # Given a comma separated string of category titles, reset the
+  # categories for this tweet to the categories in the string.
 
-   # tweet = tweeted_text.gsub(/#/, '').downcase.split(/\s+/)
-   # titles = Category.all.map(&:title).map(&:downcase)
-
-   # match = (tweet & titles)
-   # match.map(&:titlecase).sort.join(', ')
-
-
+  def categories_as_string= (new_categories)
+    categories.clear
+    new_categories.split(/\s*,\s*/).each do |title|
+      cat = Category.where('LOWER(title) = ?', title.downcase).first
+      categories << cat if !cat.nil?
     end
-
+  end
 end
 

@@ -17,11 +17,23 @@ class TweetTest < ActiveSupport::TestCase
     tweet = Tweet.new do |t|
       t.tweeted_text ="I wish I could get! money for my10 #business to get off the ground #money"
     end
-
    assert_equal("Business, Money", tweet.suggested_categories)
-   # assert_equal("Business", tweet.suggested_categories)
-   # assert_equal("Money", tweet.suggested_categories)
-  #  assert_equal("Ground", tweet.suggested_categories)
+  end
+
+  #############################################################
+  def test_setting_categories_from_string
+    tweet = Tweet.new
+    cat = Category.where(title: "Business").first
+    assert(cat)
+
+    tweet.categories << cat
+    assert_equal(1, tweet.categories.size)
+
+    tweet.categories_as_string = "Money, Personal"
+    assert_equal(2, tweet.categories.size)
+    assert_equal(%w(Money Personal),
+                 tweet.categories.map(&:title).sort)
+
   end
 
 end
