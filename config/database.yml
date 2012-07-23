@@ -2,7 +2,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: rob_twitter_research_development
+  database: twitter_research_development
   pool: 5
 
 # Warning: The database defined as "test" will be erased and
@@ -11,11 +11,11 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: rob_twitter_research_test
+  database: twitter_research_test
   pool: 5
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: rob_twitter_research_production
+  database: twitter_research_production
   pool: 5

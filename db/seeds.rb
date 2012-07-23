@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create! do |user|
-  user.full_name             = 'Roert Test'
-  user.email                 = "macSeed@test.com"
+  user.full_name             = 'Foo Bar'
+  user.email                 = "foobar@test.com"
   user.password              = 'foobar'
   user.password_confirmation = 'foobar'
 end
