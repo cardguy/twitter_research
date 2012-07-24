@@ -16,7 +16,6 @@ class Tweet < ActiveRecord::Base
 
     (tweet & titles).map(&:capitalize).sort.join(', ')
   end
-
   ##############################################################
   # Returns comma separated string of the current category titles.
   def categories_as_string

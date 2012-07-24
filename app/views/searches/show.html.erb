@@ -3,27 +3,26 @@
 
   <h1> You searched for <%= params[:q] %></h1>
 
-  <pre>
-    <% @results.inspect %>
-  </pre>
 
   <div id=base>
     <ul>
       <% @results.each do |r| %>
         <li>
-        <%= r.user %> <em>said</em>  <%= r.text %>
-        <% tweet = Tweet.new(:twitter_user => r.user,
-                             :tweeted_text => r.text,
-                             # fix time issue through simple_twitter
-                             :tweeted_at   => Time.now) %>
+          <img src="<%=r.avatar%>"/>
+          <%= r.user %> <em>said</em>  <%= r.text %>
+          <% tweet = Tweet.new(:twitter_user => r.user,
+                               :tweeted_text => r.text,
+                               # fix time issue through simple_twitter
+                               :tweeted_at   => r.time) %>
+
 
           <%= r.text %>
           <%= form_for(tweet) do | form | %>
-          <%= form.hidden_field(:twitter_user) %>
-          <%= form.hidden_field(:tweeted_text) %>
-          <%= form.hidden_field(:tweeted_at) %>
+            <%= form.hidden_field(:twitter_user) %>
+            <%= form.hidden_field(:tweeted_text) %>
+            <%= form.hidden_field(:tweeted_at) %>
 
-          <%= form.submit('Save') %>
+            <%= form.submit('Save') %>
           <% end %>
         </li>
       <% end %>
