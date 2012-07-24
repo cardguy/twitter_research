@@ -1,6 +1,6 @@
 GIT
   remote: https://git@github.com/cardguy/simple_twitter.git
-  revision: a6f008a6b0c0baef8478db883d9defc3b6e2dc0a
+  revision: 221fcca3c9611c0a66af7e4943f744210739db2d
   specs:
     simple_twitter (1.0.0)
       httparty (~> 0.8.3)

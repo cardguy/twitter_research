@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
 gem('simple_twitter',
-:git => 'https://git@github.com/cardguy/simple_twitter.git')
+     :git => 'https://git@github.com/cardguy/simple_twitter.git')
+   # :path => '~/simple_twitter')
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

@@ -6,7 +6,7 @@ class SearchesController < ApplicationController
   def show
     search = SimpleTwitter::Search.new
     search.results_per_page = params[:rpp]
-   # search.lang = params[:lang]
+    search.language = params[:lang]
     @results = search.search(params[:q])
   end
 
