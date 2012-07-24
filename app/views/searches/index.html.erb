@@ -2,9 +2,7 @@
 <div class="form">
   <form action="/searches/1" method="get">
 
-<label>Search Twitter</label>
-<input type="text" name="q" id="q" value="Search Twitter"/>
-<input type="submit" name="submit" value="submit"/><br/>
+
 
 <br/>
 
@@ -17,10 +15,14 @@
 
 <br/>
 
-  <label>Results Per Page?</label><br/>
-  <input type="radio" id="rpp" value=5 /> 5<br />
-  <input type="radio" id="rpp" value=10 />10<br />
-  <input type="radio" id="rpp" value=20 />20<br />
+ <label>Results Per Page?</label><br/>
+  <input type="radio" name="rpp" value="5" /> 5<br />
+  <input type="radio" name="rpp" value="10" />10<br />
+  <input type="radio" name="rpp" value="20" />20<br />
+
+  <label>Search Twitter</label>
+<input type="text" name="q" id="q" value="Search Twitter"/>
+<input type="submit" name="submit" value="submit"/><br/>
 
 
 
