@@ -5,9 +5,11 @@ class Tweet < ActiveRecord::Base
   validates(:tweeted_text, :presence => true)
   validates(:tweeted_at, :presence => true)
 
+  scope(:with_notes, includes(:notes).order('notes.created_at desc'))
 
   belongs_to(:user)
   has_and_belongs_to_many(:categories)
+  has_many(:notes)
 
   def suggested_categories
     titles = Category.all.map(&:title).map(&:downcase)
