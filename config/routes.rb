@@ -6,6 +6,8 @@ TwitterResearch::Application.routes.draw do
 
   resources(:tweets) do
     resources(:notes)
+    resources(:categories)
+
   end
 
 

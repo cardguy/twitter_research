@@ -8,7 +8,7 @@ class TweetsController < ApplicationController
 
   def show
     @tweet = current_user.tweets.with_notes.find(params[:id])
-      respond_with(@tweet)
+    respond_with(@tweet)
   end
 
   def create

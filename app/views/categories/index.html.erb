@@ -1,0 +1,23 @@
+<h1>Tweets in <%= @category.title %></h1>
+
+<ul id="categories">
+  <%= @categories.each do |c| %>
+    <li>
+      <span class="category">
+        <%= link_to(c.title, category_url(c)) %>
+      </span>
+
+      <span class="edit">
+        <%= link_to(c.edit, category_url(c)) %>
+      </span>
+
+      <span class="delete">
+        <%= link_to(c.delete, category_url(c)) %>
+      </span>
+
+
+
+
+
+    </li>
+    </ul>
