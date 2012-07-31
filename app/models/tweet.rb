@@ -3,13 +3,13 @@ class Tweet < ActiveRecord::Base
 
   validates(:twitter_user, :presence => true)
   validates(:tweeted_text, :presence => true)
-  validates(:twitter_at, :presence => true)
+  validates(:tweeted_at, :presence => true)
 
   scope(:with_notes, includes(:notes.order('notes.created_at desc')))
 
 
         belongs_to(:user)
-        has_many(:notes, :dependent, :delete_all)
+        has_many(:notes, :dependent => :delete_all)
         has_and_belongs_to_many(:categories)
 
         def suggested_categories

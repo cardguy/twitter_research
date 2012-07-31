@@ -8,7 +8,7 @@ class Category < ActiveRecord::Base
   end
 
 
-  def tite_match? (other)
+  def title_match? (other)
     title.downcase == other.downcase
   end
 end

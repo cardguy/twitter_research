@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   # Show a list of all categories
   def index
     @categories = Category.order(:title).limit(50)
-    respond_with([@categories, @title])
+    respond_with(@categories)
   end
 
   # Show a single category with all tweets
@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
 
   # Show form for a new category
   def new
-    @category = Category,new
+    @category = Category.new
     respond_with(@category)
   end
 
