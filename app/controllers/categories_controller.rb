@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
   # Save/create the new category with new params
   def create
     @category = Category.create(params[:category])
-    respond_with(@category)
+    respond_with(@category, location: categories_url)
   end
 
   # Show a form to let users edit form submitted

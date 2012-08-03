@@ -1,11 +1,11 @@
 class Tweet < ActiveRecord::Base
-  attr_accessible(:twitter_user, :tweeted_text, :tweeted_at)
+  attr_accessible(:twitter_user, :tweeted_text, :tweeted_at, :categories_as_string)
 
   validates(:twitter_user, :presence => true)
   validates(:tweeted_text, :presence => true)
   validates(:tweeted_at, :presence => true)
 
-  scope(:with_notes, includes(:notes.order('notes.created_at desc')))
+  scope(:with_notes, includes(:notes).order('notes.created_at desc'))
 
 
         belongs_to(:user)

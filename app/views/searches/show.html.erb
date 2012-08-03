@@ -12,7 +12,6 @@
           <%= r.user %> <em>said</em>  <%= r.text %>
           <% tweet = Tweet.new(:twitter_user => r.user,
                                :tweeted_text => r.text,
-                               # fix time issue through simple_twitter
                                :tweeted_at   => r.time) %>
 
 
