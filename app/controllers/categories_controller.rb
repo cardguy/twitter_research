@@ -22,6 +22,7 @@ class CategoriesController < ApplicationController
   # Save/create the new category with new params
   def create
     @category = Category.create(params[:category])
+    flash.notice = "Great, you've created a custom category!" if !@category.new_record?
     respond_with(@category, location: categories_url)
   end
 

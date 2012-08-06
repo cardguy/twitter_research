@@ -8,6 +8,7 @@ class SearchesController < ApplicationController
     search.results_per_page = params[:rpp]
     search.language = params[:lang]
     @results = search.search(params[:q])
+    flash.notice = "Search completed"
   end
 
 end
