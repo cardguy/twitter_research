@@ -1,4 +1,4 @@
-<%= form_for(@category :remote => true) do |form| %>
+<%= form_for(@category, remote: true) do |form| %>
   <fieldset>
     <legend>Category</legend>
 
@@ -8,7 +8,8 @@
     </div>
 
     <div>
-      <%= form.submit %>
+      <%= form.submit('Cancel',type: 'button', name: 'cancel') %>
+      <%=form.submit%>
     </div>
   </fieldset>
 <% end %>

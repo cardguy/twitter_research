@@ -1,5 +1,9 @@
 $(function () {
   var html = "<%= j(render(partial: 'form')) %>";
-  $("#form-area").html(html).show();
+  $("#form").html(html).show();
+
+$("#form input[name='cancel']").click(function (){
+$("#form").hide();
+});
 
 });
