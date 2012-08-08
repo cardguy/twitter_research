@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(:version => 20120725170408) do
   add_index "tweets", ["user_id"], :name => "index_tweets_on_user_id"
 
   create_table "users", :force => true do |t|
-    t.string   "full_name",                              :null => false
     t.string   "email",                                  :null => false
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
