@@ -1,10 +1,24 @@
-<h1>Tweets in <%= @category.title %></h1>
-
-Categories
-(<%= link_to('New', new_category_url, remote: true) %>)
-
-<div id="form"></div>
+<h1>
+  Categories
+  (<%= link_to('New', new_category_url) %>)
+</h1>
 
 <ul id="categories">
-  <%= render(partial: 'category', collection: @categories) %>
+  <% @categories.each do |c| %>
+    <li>
+      <span class="title">
+        <%= link_to(c.title, category_url(c)) %>
+      </span>
+
+      <span class="edit">
+        <%= link_to('Edit', edit_category_url(c)) %>
+      </span>
+
+      <span class="delete">
+        <%= link_to('Delete', category_url(c),
+                    :method  => :delete,
+                    :confirm => 'Are you sure?') %>
+      </span>
+    </li>
+  <% end %>
 </ul>
