@@ -11,7 +11,7 @@
   <h2>Categories <%= link_to('Edit', edit_tweet_url(@tweet)) %></h2>
 
   <% if @tweet.categories.empty? %>
-    <p>This tweet isn't in any categories.</p>
+    <h2>This tweet isn't in any categories.</h2>
   <% else %>
     <p><%= @tweet.categories.map(&:title).to_sentence %></p>
   <% end %>

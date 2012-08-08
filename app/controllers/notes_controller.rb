@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
 
-  before_filter(:fetch_tweet_and_maybe_note)
+  before_filter(:fetch_tweet)
+  before_filter(:fetch_note, except:[:index, :new, :create])
 
   def index
     @notes = @tweet.notes.order('created_at desc')

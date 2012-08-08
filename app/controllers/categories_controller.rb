@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
   # Show a single category with all tweets
   def show
     @category = Category.includes(:tweets).
-      order('tweets_at desc').find(params[:id])
+      order('tweets.tweeted_at desc').find(params[:id])
     respond_with(@category)
   end
 
@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
   # Save/create the new category with new params
   def create
     @category = Category.create(params[:category])
-    flash.notice = "Great, you've created a custom category!" if !@category.new_record?
+    # flash.notice = "Great, you've created a custom category!" if !@category.new_record?
     respond_with(@category, location: categories_url)
   end
 

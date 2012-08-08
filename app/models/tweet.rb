@@ -1,5 +1,9 @@
 class Tweet < ActiveRecord::Base
   attr_accessible(:twitter_user, :tweeted_text, :tweeted_at, :categories_as_string)
+  #allows mass assignment. never put a foriegn key in here.
+  #only what you want a user to be able to use
+
+
 
   validates(:twitter_user, :presence => true)
   validates(:tweeted_text, :presence => true)
@@ -15,8 +19,6 @@ class Tweet < ActiveRecord::Base
         def suggested_categories
           titles = Category.all.map(&:title).map(&:downcase)
           tweet = tweeted_text.gsub(/[^\w\s]/, ' ').downcase.split.sort
-
-
           (tweet & titles).map(&:capitalize).sort.join(', ')
         end
 
